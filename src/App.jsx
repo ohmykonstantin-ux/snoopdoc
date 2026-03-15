@@ -89,8 +89,8 @@ export default function App() {
       {/* HEADER — один заголовок */}
       <section className="px-6 pt-10 pb-6 md:px-10 md:pt-14">
         <div className="mx-auto max-w-7xl text-center">
-          <h1 className="text-3xl font-semibold tracking-tight text-[#101828] md:text-4xl">
-            Инвестиционное предложение · <span className="text-[#2f76ff]">СнупДок</span>
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            <span className="text-red-500">Инвестиционное предложение</span> · <span className="text-[#2f76ff]">СнупДок</span>
           </h1>
           <p className="mt-3 text-base text-[#667085] md:text-lg">
             Март — Декабрь 2026 · Россия · SaaS-подписка + ПЭП по транзакции
@@ -132,38 +132,62 @@ export default function App() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[#d8dee8] bg-[#f7f8fa] p-5 shadow-[0_6px_20px_rgba(16,24,40,0.04)]">
-              <div className="mb-3 flex items-center gap-1.5">
-                <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
-                <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
-                <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-              </div>
-              <h3 className="text-lg font-semibold tracking-tight text-[#1d2939]">
-                Документы — статусы подписания
-              </h3>
-              <div className="mt-4 space-y-3 border-t border-[#e4e7ec] pt-4 text-sm">
-                <div className="flex items-center justify-between gap-4 border-b border-[#eef1f5] pb-3">
-                  <div><span className="font-semibold">СЗ Черепицина</span> — Режиссёр</div>
-                  <span className="rounded-xl bg-[#ccefd6] px-3 py-1 text-xs font-medium text-[#169c41]">Подписан</span>
-                </div>
-                <div className="flex items-center justify-between gap-4 border-b border-[#eef1f5] pb-3">
-                  <div><span className="font-semibold">ИП Шавкерин</span> — Оператор</div>
-                  <span className="rounded-xl bg-[#f7e9a6] px-3 py-1 text-xs font-medium text-[#a87400]">На подписи</span>
-                </div>
-                <div className="flex items-center justify-between gap-4 border-b border-[#eef1f5] pb-3">
-                  <div><span className="font-semibold">ИП Киселев</span> — Колорист</div>
-                  <span className="rounded-xl bg-[#f7e9a6] px-3 py-1 text-xs font-medium text-[#a87400]">На подписи</span>
-                </div>
-                <div className="flex items-center justify-between gap-4">
-                  <div><span className="font-semibold">СЗ Петров</span> — Звукорежиссёр</div>
-                  <span className="rounded-xl bg-[#ccefd6] px-3 py-1 text-xs font-medium text-[#169c41]">Подписан</span>
-                </div>
-              </div>
-              <div className="mt-6 flex items-center justify-center gap-2">
-                <span className="h-2 w-2 rounded-full bg-[#c9ced6]" />
-                <span className="h-2 w-2 rounded-full bg-[#c9ced6]" />
-                <span className="h-2 w-2 rounded-full bg-[#2f76ff]" />
-              </div>
+            {/* Иллюстрация: счастливый бухгалтер */}
+            <div className="rounded-2xl border border-[#d8dee8] bg-gradient-to-br from-[#eef3ff] to-[#f0fdf4] p-6 shadow-[0_6px_20px_rgba(16,24,40,0.04)] flex items-center justify-center min-h-[280px]">
+              <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-xs">
+                {/* Фон-стол */}
+                <rect x="40" y="200" width="240" height="12" rx="6" fill="#d1d9e6"/>
+                {/* Стопка документов */}
+                <rect x="60" y="155" width="80" height="48" rx="6" fill="white" stroke="#d8dee8" strokeWidth="1.5"/>
+                <rect x="65" y="162" width="50" height="3" rx="1.5" fill="#c9d4e8"/>
+                <rect x="65" y="169" width="40" height="3" rx="1.5" fill="#c9d4e8"/>
+                <rect x="65" y="176" width="45" height="3" rx="1.5" fill="#c9d4e8"/>
+                {/* Галочка на документе */}
+                <circle cx="124" cy="170" r="10" fill="#2bbf5f"/>
+                <path d="M119 170l3.5 3.5 6-6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                {/* Ещё документ сзади */}
+                <rect x="55" y="160" width="80" height="48" rx="6" fill="#f0f4ff" stroke="#d8dee8" strokeWidth="1.5" style={{zIndex: -1}}/>
+                {/* Монетки */}
+                <circle cx="200" cy="180" r="14" fill="#fbbf24" opacity="0.9"/>
+                <circle cx="222" cy="186" r="10" fill="#f59e0b" opacity="0.85"/>
+                <circle cx="210" cy="170" r="8" fill="#fcd34d" opacity="0.8"/>
+                <text x="196" y="184" fontSize="10" fontWeight="bold" fill="white" textAnchor="middle">₽</text>
+                {/* Тело */}
+                <rect x="130" y="130" width="60" height="72" rx="14" fill="#2f76ff"/>
+                {/* Руки */}
+                <path d="M130 145 Q108 150 105 165 Q103 175 112 178" stroke="#2f76ff" strokeWidth="10" strokeLinecap="round" fill="none"/>
+                <path d="M190 145 Q212 150 215 165 Q217 175 208 178" stroke="#2f76ff" strokeWidth="10" strokeLinecap="round" fill="none"/>
+                {/* Шея */}
+                <rect x="151" y="110" width="18" height="24" rx="6" fill="#f5c6a0"/>
+                {/* Голова */}
+                <circle cx="160" cy="95" r="34" fill="#f5c6a0"/>
+                {/* Волосы */}
+                <path d="M126 90 Q128 58 160 56 Q192 58 194 90 Q188 68 160 66 Q132 68 126 90Z" fill="#4a3728"/>
+                {/* Глаза */}
+                <ellipse cx="148" cy="93" rx="5" ry="6" fill="white"/>
+                <ellipse cx="172" cy="93" rx="5" ry="6" fill="white"/>
+                <circle cx="149" cy="94" r="3" fill="#2d1b0e"/>
+                <circle cx="173" cy="94" r="3" fill="#2d1b0e"/>
+                <circle cx="150" cy="92" r="1" fill="white"/>
+                <circle cx="174" cy="92" r="1" fill="white"/>
+                {/* Улыбка */}
+                <path d="M149 107 Q160 116 171 107" stroke="#c0775a" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+                {/* Брови — довольные */}
+                <path d="M143 86 Q148 83 153 86" stroke="#4a3728" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                <path d="M167 86 Q172 83 177 86" stroke="#4a3728" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                {/* Галстук */}
+                <path d="M156 130 L160 155 L164 130 L161 136 Z" fill="#ef4444"/>
+                {/* Ноги */}
+                <rect x="140" y="198" width="18" height="28" rx="6" fill="#1e3a5f"/>
+                <rect x="162" y="198" width="18" height="28" rx="6" fill="#1e3a5f"/>
+                {/* Туфли */}
+                <ellipse cx="149" cy="226" rx="12" ry="6" fill="#111"/>
+                <ellipse cx="171" cy="226" rx="12" ry="6" fill="#111"/>
+                {/* Звёздочки радости */}
+                <text x="88" y="80" fontSize="16" fill="#fbbf24">✦</text>
+                <text x="220" y="75" fontSize="12" fill="#2f76ff">✦</text>
+                <text x="240" y="100" fontSize="10" fill="#2bbf5f">✦</text>
+              </svg>
             </div>
           </div>
         </div>
@@ -229,46 +253,46 @@ export default function App() {
           <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#0f172a] md:text-3xl">
             Выручка, расходы и прибыль на горизонте трёх лет
           </h2>
-          <div className="mt-6 rounded-2xl border border-[#d8dee8] bg-[#f7f8fa] p-5 md:p-7 shadow-[0_6px_18px_rgba(16,24,40,0.04)]">
+          <div className="mt-6 rounded-2xl border border-[#d8dee8] bg-[#f7f8fa] p-5 md:p-6 shadow-[0_6px_18px_rgba(16,24,40,0.04)]">
             <div className="flex flex-wrap items-center justify-center gap-5 text-sm text-[#475467]">
               <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#2f76ff]" />Выручка</div>
               <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#f04444]" />Расходы</div>
               <div className="flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#2bbf5f]" />Прибыль</div>
             </div>
-            <div className="mt-6 grid grid-cols-3 gap-6 px-2 md:px-8">
+            <div className="mt-5 flex justify-around gap-2 px-2 md:px-6">
               {horizon.map((item) => {
                 const max = 35;
-                const barMaxH = 280;
-                const blueH = Math.max((item.revenue / max) * barMaxH, 36);
-                const redH = Math.max((item.costs / max) * barMaxH, 36);
-                const greenH = Math.max((Math.abs(item.profit) / max) * barMaxH, 14);
+                const barMaxH = 200;
+                const blueH = Math.max((item.revenue / max) * barMaxH, 28);
+                const redH = Math.max((item.costs / max) * barMaxH, 28);
+                const greenH = Math.max((Math.abs(item.profit) / max) * barMaxH, 12);
                 return (
-                  <div key={item.year}>
-                    <div className="grid grid-cols-3 items-end gap-2 md:gap-3" style={{ height: `${barMaxH + 32}px` }}>
+                  <div key={item.year} className="flex flex-col items-center gap-0" style={{ minWidth: 0 }}>
+                    <div className="flex items-end gap-1.5" style={{ height: `${barMaxH + 28}px` }}>
                       {/* Выручка */}
-                      <div className="flex h-full flex-col items-center justify-end">
-                        <div className="mb-1.5 text-sm font-semibold text-[#344054]">+{item.revenue}</div>
-                        <div className="w-full rounded-t-xl bg-[#2f76ff]" style={{ height: `${blueH}px` }} />
+                      <div className="flex flex-col items-center justify-end h-full w-10 md:w-14">
+                        <div className="mb-1 text-xs font-semibold text-[#344054]">+{item.revenue}</div>
+                        <div className="w-full rounded-t-lg bg-[#2f76ff]" style={{ height: `${blueH}px` }} />
                       </div>
                       {/* Расходы */}
-                      <div className="flex h-full flex-col items-center justify-end">
-                        <div className="mb-1.5 text-sm font-semibold text-[#344054]">+{item.costs}</div>
-                        <div className="w-full rounded-t-xl bg-[#f04444]" style={{ height: `${redH}px` }} />
+                      <div className="flex flex-col items-center justify-end h-full w-10 md:w-14">
+                        <div className="mb-1 text-xs font-semibold text-[#344054]">−{item.costs}</div>
+                        <div className="w-full rounded-t-lg bg-[#f04444]" style={{ height: `${redH}px` }} />
                       </div>
                       {/* Прибыль */}
                       {item.profit >= 0 ? (
-                        <div className="flex h-full flex-col items-center justify-end">
-                          <div className="mb-1.5 text-sm font-semibold text-[#344054]">+{item.profit}</div>
-                          <div className="w-full rounded-t-xl bg-[#2bbf5f]" style={{ height: `${greenH}px` }} />
+                        <div className="flex flex-col items-center justify-end h-full w-10 md:w-14">
+                          <div className="mb-1 text-xs font-semibold text-[#344054]">+{item.profit}</div>
+                          <div className="w-full rounded-t-lg bg-[#2bbf5f]" style={{ height: `${greenH}px` }} />
                         </div>
                       ) : (
-                        <div className="flex h-full flex-col items-center justify-end">
-                          <div className="w-full rounded-b-xl bg-[#2bbf5f]" style={{ height: `${greenH}px` }} />
-                          <div className="mt-1.5 text-sm font-semibold text-[#344054]">{item.profit}</div>
+                        <div className="flex flex-col items-center justify-end h-full w-10 md:w-14">
+                          <div className="w-full rounded-b-lg bg-[#2bbf5f]" style={{ height: `${greenH}px` }} />
+                          <div className="mt-1 text-xs font-semibold text-[#344054]">{item.profit}</div>
                         </div>
                       )}
                     </div>
-                    <div className="mt-3 text-center text-base font-semibold text-[#344054]">{item.year}</div>
+                    <div className="mt-3 text-sm font-semibold text-[#344054]">{item.year}</div>
                   </div>
                 );
               })}
