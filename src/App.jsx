@@ -70,6 +70,7 @@ export default function App() {
 Ключевые показатели
 🟡 Выручка: 420 тыс. ₽
 🟢 Расходы: 390 тыс. ₽
+🟡 Прибыль за месяц: +30 тыс. ₽
 🟢 Остаток денег: 890 тыс. ₽
 🟡 Платящие клиенты: 4
 
@@ -211,7 +212,7 @@ export default function App() {
                 className={
                   scenario.featured
                     ? 'rounded-2xl border border-[#d2d9e6] bg-[#eef3fb] p-6 shadow-[0_10px_28px_rgba(16,24,40,0.08)]'
-                    : 'rounded-2xl border border-[#d9dfe8] bg-[#f7f8fa] p-5 shadow-[0_6px_18px_rgba(16,24,40,0.04)] opacity-95 lg:scale-[0.94]'
+                    : 'rounded-2xl border border-[#d9dfe8] bg-[#f7f8fa] p-5 shadow-[0_6px_18px_rgba(16,24,40,0.04)] opacity-75 lg:scale-[0.76]'
                 }
               >
                 <div className="text-xs font-medium uppercase tracking-wider text-[#2f76ff]">{scenario.name}</div>
